@@ -1,3 +1,4 @@
+
 console.log("chaining.js");
 
 /*
@@ -15,8 +16,24 @@ let integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
 function chain(arr){
     let done = arr.sort((a,b)=> b - a)
                   .filter((num)=> num < 19)
-                  .map((num)=> (num * 1.5) -1);
+                  .map((num)=> (num * 1.5) -1)
+                  .reduce((a,b)=> a + b);
     return done;
 }
 
-console.log("descending, less than 19, then multiplied and subtracted from", chain(integers));
+//one at a time
+console.log("integers: ", integers);
+let descending = integers.sort((a,b)=> b - a);
+let filtered = descending.filter((num)=> num < 19);
+let mapped = filtered.map((num)=> (num * 1.5) -1);
+let reduced = mapped.reduce((a,b)=> a + b)
+
+console.log("descending: ", descending);
+console.log("less than 19: ", filtered);
+console.log("(* 1.5) - 1", mapped);
+console.log("summed: ", reduced);
+
+
+// all together
+console.log("all together", chain(integers));
+
