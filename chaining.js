@@ -23,6 +23,7 @@ function chain(arr){
 
 //one at a time
 console.log("integers: ", integers);
+
 let descending = integers.sort((a,b)=> b - a);
 let filtered = descending.filter((num)=> num < 19);
 let mapped = filtered.map((num)=> (num * 1.5) -1);
